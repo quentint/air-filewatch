@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/halo">
+	
+	<fx:Script>
+		<![CDATA[
+			import flash.filters.BitmapFilterQuality;
+		]]>
+	</fx:Script>
+	
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="normalAndInactive" />
+		<s:State name="disabled" />
+	</s:states>
+	
+	<s:transitions>
+		<s:Transition fromState="normal" toState="normalAndInactive">
+			<s:Animate target="{dShadow}">
+				<s:SimpleMotionPath property="alpha" />
+			</s:Animate>
+		</s:Transition>
+		<s:Transition fromState="normalAndInactive" toState="normal">
+			<s:Animate target="{dShadow}">
+				<s:SimpleMotionPath property="alpha" />
+			</s:Animate>
+		</s:Transition>
+	</s:transitions>
+	
+	<s:Rect radiusX="10" radiusY="10" left="16" right="16" top="16" bottom="16">
+		<s:fill>
+			<s:SolidColor color="#5C5C5C" />
+		</s:fill>
+		<s:filters>
+			<s:GlowFilter inner="true" color="#ffffff" alpha=".6" blurX="6" blurY="6" />
+		</s:filters>
+	</s:Rect>
+	<s:Rect radiusX="10" radiusY="10" left="16" right="16" top="16" bottom="16">
+		<s:stroke>
+			<s:SolidColorStroke color="#333333" />
+		</s:stroke>
+	</s:Rect>
+	
+	<s:Group id="contentGroup" width="100%" height="100%" left="16" right="16" top="16" bottom="16"/>
+	
+	<s:filters>
+		<s:DropShadowFilter id="dShadow" distance="0" alpha=".6" alpha.normalAndInactive=".1" blurX="16" blurY="16" quality="{BitmapFilterQuality.HIGH}" />
+	</s:filters>
+</s:Skin>

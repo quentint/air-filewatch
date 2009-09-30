@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin 
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:mx="library://ns.adobe.com/flex/halo"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	width="23" height="23">
+
+	<fx:Metadata>
+		<![CDATA[
+			[HostComponent("IconButton")]
+		]]>
+	</fx:Metadata>
+
+	<s:states>
+		<s:State name="up" stateGroups="idle"/>
+		<s:State name="over" stateGroups="idle,uover"/>
+		<s:State name="down" stateGroups="idle,udown"/>
+		<s:State name="disabled"/>
+		
+		<mx:State name="upAndSelected" stateGroups="selected"/>
+		<mx:State name="overAndSelected" stateGroups="uover"/>
+		<mx:State name="downAndSelected" stateGroups="selected,udown"/>
+	</s:states>
+
+	<s:Rect bottom="0" left="0" right="0" top="0"
+		radiusX="4" radiusY="4">
+		<s:fill>
+			<mx:LinearGradient rotation="90" rotation.udown="280">
+				<mx:GradientEntry color="#77787a" ratio="0" />
+				<mx:GradientEntry color="#5a5b5d" ratio="1" />
+			</mx:LinearGradient>
+		</s:fill>
+		<s:stroke>
+			<mx:SolidColorStroke color.up="#333333" color.over="#222222" color.selected="#ff8a30" color.overAndSelected="#ff7104" />
+		</s:stroke>
+		<s:filters>
+			<s:DropShadowFilter color="#ffffff" alpha=".25" distance="1" angle="90" blurX="0" blurY="0" />
+		</s:filters>
+	</s:Rect>
+	<s:BitmapImage id="iconElement" verticalCenter="0" horizontalCenter="0"	/>
+</s:SparkSkin>
